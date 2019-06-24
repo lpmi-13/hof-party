@@ -72,3 +72,47 @@ possible options:
 - put in a house
 - adding a greeting at the beginning
 - make 5 copies of a thing
+
+
+
+another example:
+
+I can design the curried function of volume to be this:
+
+```
+function volume(l) {
+    return (w, h) => {
+        return l * w * h
+    }
+}
+```
+
+So it can be called like this:
+
+```
+const hCy = volume(70);
+hCy(203,142);
+hCy(220,122);
+hCy(120,123);
+```
+or
+
+```
+volume(70)(90,30);
+volume(70)(390,320);
+volume(70)(940,340);
+```
+
+THIS IS NICE, SINCE IT'S A REAL WORLD IDEA...NEED TO FIND MORE/BETTER EXAMPLES
+INVOLVING PEOPLE
+
+and here's an example that's basically a react higher order component
+```
+> const wrapped = ( a, b) => { return `<${a}>${b}</${a}>`}
+> const partial = (fn, a) => (b) => fn(a,b)
+undefined
+> const divvit = partial(wrapped, `div`)
+undefined
+> divvit('this is inside a div')
+'<div>this is inside a div</div>'
+
